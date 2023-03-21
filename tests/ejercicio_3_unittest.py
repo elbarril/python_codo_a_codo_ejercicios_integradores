@@ -15,8 +15,8 @@ TEST_WORDS_RESULT = {
     "python": 1
 }
 
-class Ejercicio1Test(unittest.TestCase):
+class Ejercicio3Test(unittest.TestCase):
     @unittest.skipUnless(TEST_EJERCICIO_3, DISABLE_MESSAGE.format("Ejercicio 3"))
-    def test_get_least_common_multiple(self):
-        frecuency_words = count_words(TEST_SENTENCE)
-        self.assertEqual(frecuency_words, TEST_WORDS_RESULT)
+    def test_count_words(self):
+        frequency_words = count_words(TEST_SENTENCE)
+        self.assertEqual(frequency_words, TEST_WORDS_RESULT)

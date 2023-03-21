@@ -11,7 +11,7 @@ TEST_NUMBERS = [
     {"ab": (6, 2), "result": 6}
 ]
 
-class Ejercicio1Test(unittest.TestCase):
+class Ejercicio2Test(unittest.TestCase):
     @unittest.skipUnless(TEST_EJERCICIO_2, DISABLE_MESSAGE.format("Ejercicio 2"))
     def test_get_least_common_multiple(self):
         for numbers in TEST_NUMBERS:
