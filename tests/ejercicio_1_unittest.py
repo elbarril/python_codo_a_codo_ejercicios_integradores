@@ -1,7 +1,7 @@
 import unittest
 from ejercicio_1 import get_greatest_common_divisor
 
-TEST_EJERCICIO1 = True
+TEST_EJERCICIO_1 = True
 DISABLE_MESSAGE = "Test {} disable"
 TEST_NUMBERS = [
     {"ab": (60, 40), "result": 20},
@@ -12,7 +12,7 @@ TEST_NUMBERS = [
 ]
 
 class Ejercicio1Test(unittest.TestCase):
-    @unittest.skipUnless(TEST_EJERCICIO1, DISABLE_MESSAGE.format("Ejercicio 1"))
+    @unittest.skipUnless(TEST_EJERCICIO_1, DISABLE_MESSAGE.format("Ejercicio 1"))
     def test_get_greatest_common_divisor(self):
         for numbers in TEST_NUMBERS:
             number_a, number_b = numbers["ab"]
