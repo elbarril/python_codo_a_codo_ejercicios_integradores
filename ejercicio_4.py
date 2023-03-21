@@ -1,5 +1,3 @@
-from ejercicio_3 import remove_non_word_character, count_words
-
 def get_most_frequent_word(frequency_words:dict[str,int]) -> tuple[str,int]:
     """ Get the most frequent word from a words frequency dictionary
     
