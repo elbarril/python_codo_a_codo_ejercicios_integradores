@@ -1,6 +1,11 @@
 NON_WORD_CHARACTERS = [",", ".", ":", ";", "?", "¿", "¡", "!", '"', "'"]
 
 def remove_non_word_character(word:str) -> str:
+    """ Check if there are any character non word in a string and remove it
+    
+    :param word: string of characters.
+    :return: the string of characters without non word characters.
+    """
     for non_word in NON_WORD_CHARACTERS:
         if non_word in word:
             word = word.replace(non_word, '')
