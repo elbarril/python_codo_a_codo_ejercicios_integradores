@@ -2,7 +2,7 @@ from unittest import TestCase, skipUnless
 from ejercicio_3 import count_words
 
 TEST_EJERCICIO_3 = True
-DISABLE_MESSAGE = "Test {} disable"
+DISABLE_MESSAGE = "Test {} disabled"
 TEST_SENTENCE = "Hola mundo. Esto es Codo a Codo, aprendiendo Python."
 TEST_WORDS_RESULT = {
     "hola": 1,

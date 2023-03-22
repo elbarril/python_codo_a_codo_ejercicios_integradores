@@ -6,7 +6,7 @@ from io import StringIO
 from ejercicio_5 import get_int_iteratively, get_int_recursively
 
 TEST_EJERCICIO_5 = True
-DISABLE_MESSAGE = "Test {} disable"
+DISABLE_MESSAGE = "Test {} disabled"
 TEST_WRONG_INPUT_VALUE = "a"
 TEST_RIGHT_INPUT_VALUE = "1"
 TEST_VALUE_ERROR_MESSAGE = "The value is not a number. Try again.\n"

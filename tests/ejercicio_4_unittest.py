@@ -3,7 +3,7 @@ from ejercicio_3 import count_words
 from ejercicio_4 import get_most_frequent_word
 
 TEST_EJERCICIO_4 = True
-DISABLE_MESSAGE = "Test {} disable"
+DISABLE_MESSAGE = "Test {} disabled"
 TEST_SENTENCE = "Hola mundo. Esto es Codo a Codo, aprendiendo Python."
 TEST_WORD_RESULT = ("codo", 2)
 

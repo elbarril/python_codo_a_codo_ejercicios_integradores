@@ -2,7 +2,7 @@ from unittest import TestCase, skipUnless
 from ejercicio_2 import get_least_common_multiple
 
 TEST_EJERCICIO_2 = True
-DISABLE_MESSAGE = "Test {} disable"
+DISABLE_MESSAGE = "Test {} disabled"
 TEST_NUMBERS = [
     {"ab": (60, 48), "result": 240},
     {"ab": (12, 18), "result": 36},

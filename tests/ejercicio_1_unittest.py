@@ -2,7 +2,7 @@ from unittest import TestCase, skipUnless
 from ejercicio_1 import get_greatest_common_divisor
 
 TEST_EJERCICIO_1 = True
-DISABLE_MESSAGE = "Test {} disable"
+DISABLE_MESSAGE = "Test {} disabled"
 TEST_NUMBERS = [
     {"ab": (60, 40), "result": 20},
     {"ab": (70, 36), "result": 2},
