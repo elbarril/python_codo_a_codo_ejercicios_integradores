@@ -1,14 +1,14 @@
 class Person:
-    def __init__(self, name:str='', age:str|int='', uid:str|int=''):
+    def __init__(self, name:str|None=None, age:str|int|None=None, uid:str|int|None=None):
         if (not age or Person.__is_valid_age(age)) and (not uid or Person.__is_valid_uid(uid)) and (not name or Person.__is_valid_name(name)):
-            self.__name:str = name
-            self.__age:str|int = age
-            self.__uid:str|int = uid
+            self.__name:str|None = name
+            self.__age:str|int|None = age
+            self.__uid:str|int|None = uid
         else:
             raise Exception("Wrong type parameters.")
 
     @property
-    def name(self) -> str:
+    def name(self) -> str|None:
         if self.__name:
             return self.__name
     
@@ -20,7 +20,7 @@ class Person:
             print("The name is not a valid name.")
 
     @property
-    def age(self) -> int:
+    def age(self) -> int|None:
         if self.__age:
             return int(self.__age)
     
@@ -32,7 +32,7 @@ class Person:
             print("The age is not a valid number.")
 
     @property
-    def uid(self) -> int:
+    def uid(self) -> int|None:
         if self.__uid:
             return int(self.__uid)
     
@@ -48,12 +48,12 @@ class Person:
         print("age:", self.age)
         print("uid:", self.uid)
 
-    def is_adult(self):
+    def is_adult(self) -> bool|None:
         if self.age:
             return self.age >= 18
         
     @classmethod
-    def __is_valid_name(self, name):
+    def __is_valid_name(self, name:str) -> bool:
         name = str(name)
         if len(name):
             for letter in name:
@@ -79,7 +79,7 @@ class Person:
             return False
         
     @classmethod
-    def __is_valid_number(self, number):
+    def __is_valid_number(self, number:str|int) -> bool:
         try:
             int(number)
             return True
