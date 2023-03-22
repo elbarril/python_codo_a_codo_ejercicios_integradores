@@ -17,6 +17,10 @@ class YoungAccount(Account):
             self.__bonification = bonification
         else:
             print("This is not a valid percentage value")
+
+    def extract(self, amount: float) -> float | None:
+        if YoungAccount.is_valid_titular:
+            return super().extract(amount)
     
     def show(self):
         print("Young Account")
