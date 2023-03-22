@@ -7,21 +7,21 @@ class Account:
 
     @property
     def titular(self) -> Person|None:
-        if self.__titular:
+        if not self.__titular is None:
             return self.__titular
 
     @titular.setter
-    def __titular__(self, titular:Person) -> None:
+    def titular(self, titular:Person) -> None:
         self.__titular = titular
 
     @property
     def amount(self) -> float|None:
-        if self.__amount:
+        if not self.__amount is None:
             return self.__amount
 
     @property
     def __amount__(self) -> float|None:
-        if self.__amount:
+        if not self.__amount is None:
             return self.__amount
 
     @__amount__.setter
@@ -29,13 +29,13 @@ class Account:
         self.__amount = amount
 
     def deposit(self, amount:float) -> None:
-        if not self.titular:
+        if self.titular is None:
             print("There is not titular.")
         elif Account.__validate_amount(amount):
             self.__amount__ = self.amount + amount if self.amount else amount
 
     def extract(self, amount:float) -> float|None:
-        if not self.titular:
+        if self.titular is None:
             print("There is not titular.")
         elif Account.__validate_amount(amount):
             self.__amount__ = self.__amount__ - amount

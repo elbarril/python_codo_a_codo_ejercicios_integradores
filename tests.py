@@ -6,6 +6,7 @@ import tests.ejercicio_4_unittest as EJ4_test
 import tests.ejercicio_5_unittest as EJ5_test
 import tests.ejercicio_6_unittest as EJ6_test
 import tests.ejercicio_7_unittest as EJ7_test
+import tests.ejercicio_8_unittest as EJ8_test
 
 if __name__ == '__main__':
     loader = unittest.TestLoader()
@@ -16,7 +17,8 @@ if __name__ == '__main__':
         loader.loadTestsFromModule(EJ4_test),
         loader.loadTestsFromModule(EJ5_test),
         loader.loadTestsFromModule(EJ6_test),
-        loader.loadTestsFromModule(EJ7_test)
+        loader.loadTestsFromModule(EJ7_test),
+        loader.loadTestsFromModule(EJ8_test)
     ]
     suite = unittest.TestSuite()
     suite.addTests(tests)

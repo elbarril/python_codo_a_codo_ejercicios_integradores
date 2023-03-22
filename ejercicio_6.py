@@ -1,6 +1,6 @@
 class Person:
     def __init__(self, name:str|None=None, age:str|int|None=None, uid:str|int|None=None):
-        if (not age or Person.__is_valid_age(age)) and (not uid or Person.__is_valid_uid(uid)) and (not name or Person.__is_valid_name(name)):
+        if (age is None or Person.__is_valid_age(age)) and (uid is None or Person.__is_valid_uid(uid)) and (name is None or Person.__is_valid_name(name)):
             self.__name:str|None = name
             self.__age:str|int|None = age
             self.__uid:str|int|None = uid
@@ -9,7 +9,7 @@ class Person:
 
     @property
     def name(self) -> str|None:
-        if self.__name:
+        if not self.__name is None:
             return self.__name
     
     @name.setter
@@ -21,7 +21,7 @@ class Person:
 
     @property
     def age(self) -> int|None:
-        if self.__age:
+        if not self.__age is None:
             return int(self.__age)
     
     @age.setter
@@ -33,7 +33,7 @@ class Person:
 
     @property
     def uid(self) -> int|None:
-        if self.__uid:
+        if not self.__uid is None:
             return int(self.__uid)
     
     @uid.setter
@@ -49,7 +49,7 @@ class Person:
         print("uid:", self.uid)
 
     def is_adult(self) -> bool|None:
-        if self.age:
+        if not self.age is None:
             return self.age >= 18
         
     @classmethod
