@@ -65,51 +65,50 @@ class Ejercicio6Test(TestCase):
         
     @skipUnless(TEST_EJERCICIO_6, DISABLE_MESSAGE.format("Ejercicio 6"))
     def test_person_without_errors(self):
+        person = Person()
         with patch('sys.stdout', new = StringIO()) as output:
-            person = Person()
-            with patch('sys.stdout', new = StringIO()) as output:
-                person.show()
-            self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_ALL_FIELDS_EMPTY)
+            person.show()
+        self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_ALL_FIELDS_EMPTY)
 
-            person.name = TEST_VALID_NAME
-            self.assertEqual(person.name, TEST_VALID_NAME)
-            person.age = TEST_VALID_AGE
-            self.assertEqual(person.age, TEST_VALID_AGE)
-            person.uid = TEST_VALID_UID
-            self.assertEqual(person.uid, TEST_VALID_UID)
-            self.assertEqual(person.is_adult(), False)
+        person.name = TEST_VALID_NAME
+        self.assertEqual(person.name, TEST_VALID_NAME)
+        person.age = TEST_VALID_AGE
+        self.assertEqual(person.age, TEST_VALID_AGE)
+        person.uid = TEST_VALID_UID
+        self.assertEqual(person.uid, TEST_VALID_UID)
+        self.assertEqual(person.is_adult(), False)
 
-            person = Person(name=TEST_VALID_NAME, uid=TEST_VALID_UID)
-            with patch('sys.stdout', new = StringIO()) as output:
-                person.show()
-            self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_AGE_FIELD_EMPTY)
+        person = Person(name=TEST_VALID_NAME, uid=TEST_VALID_UID)
+        with patch('sys.stdout', new = StringIO()) as output:
+            person.show()
+        self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_AGE_FIELD_EMPTY)
 
-            person = Person(name=TEST_VALID_NAME, age=TEST_VALID_AGE)
-            with patch('sys.stdout', new = StringIO()) as output:
-                person.show()
-            self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_UID_FIELD_EMPTY)
+        person = Person(name=TEST_VALID_NAME, age=TEST_VALID_AGE)
+        with patch('sys.stdout', new = StringIO()) as output:
+            person.show()
+        self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_UID_FIELD_EMPTY)
 
-            person = Person(age=TEST_VALID_AGE, uid=TEST_VALID_UID)
-            with patch('sys.stdout', new = StringIO()) as output:
-                person.show()
-            self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_NAME_FIELD_EMPTY)
+        person = Person(age=TEST_VALID_AGE, uid=TEST_VALID_UID)
+        with patch('sys.stdout', new = StringIO()) as output:
+            person.show()
+        self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_NAME_FIELD_EMPTY)
 
-            person = Person(age=TEST_VALID_AGE)
-            with patch('sys.stdout', new = StringIO()) as output:
-                person.show()
-            self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_NAME_UID_FIELDS_EMPTY)
+        person = Person(age=TEST_VALID_AGE)
+        with patch('sys.stdout', new = StringIO()) as output:
+            person.show()
+        self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_NAME_UID_FIELDS_EMPTY)
 
-            person = Person(uid=TEST_VALID_UID)
-            with patch('sys.stdout', new = StringIO()) as output:
-                person.show()
-            self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_NAME_AGE_FIELDS_EMPTY)
+        person = Person(uid=TEST_VALID_UID)
+        with patch('sys.stdout', new = StringIO()) as output:
+            person.show()
+        self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_NAME_AGE_FIELDS_EMPTY)
 
-            person = Person(name=TEST_VALID_NAME)
-            with patch('sys.stdout', new = StringIO()) as output:
-                person.show()
-            self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_AGE_UID_FIELDS_EMPTY)
+        person = Person(name=TEST_VALID_NAME)
+        with patch('sys.stdout', new = StringIO()) as output:
+            person.show()
+        self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_AGE_UID_FIELDS_EMPTY)
 
-            person = Person(name=TEST_VALID_NAME, age=TEST_VALID_AGE, uid=TEST_VALID_UID)
-            with patch('sys.stdout', new = StringIO()) as output:
-                person.show()
-            self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_ALL_FIELDS)
+        person = Person(name=TEST_VALID_NAME, age=TEST_VALID_AGE, uid=TEST_VALID_UID)
+        with patch('sys.stdout', new = StringIO()) as output:
+            person.show()
+        self.assertEqual(output.getvalue(), TEST_SHOW_PERSON_ALL_FIELDS)
