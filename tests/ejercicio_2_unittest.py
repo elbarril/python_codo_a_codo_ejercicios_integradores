@@ -1,4 +1,4 @@
-import unittest
+from unittest import TestCase, skipUnless
 from ejercicio_2 import get_least_common_multiple
 
 TEST_EJERCICIO_2 = True
@@ -11,8 +11,8 @@ TEST_NUMBERS = [
     {"ab": (6, 2), "result": 6}
 ]
 
-class Ejercicio2Test(unittest.TestCase):
-    @unittest.skipUnless(TEST_EJERCICIO_2, DISABLE_MESSAGE.format("Ejercicio 2"))
+class Ejercicio2Test(TestCase):
+    @skipUnless(TEST_EJERCICIO_2, DISABLE_MESSAGE.format("Ejercicio 2"))
     def test_get_least_common_multiple(self):
         for numbers in TEST_NUMBERS:
             number_a, number_b = numbers["ab"]
